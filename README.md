@@ -1,6 +1,31 @@
 # **Class-aware Sounding Objects Localization**
 
-Code for our TPAMI 2021 paper [**Class-aware Sounding Objects Localization via Audiovisual Correspondence**](#). The code is implemented on PyTorch with python3. 
+
+
+<div align=center><img src='https://i.postimg.cc/333jywnM/Xnip2022-02-22-17-56-23.jpg' width=50% ></div>
+
+Audiovisual scenes are pervasive in our daily life. It is commonplace for humans to discriminatively localize different sounding objects but quite challenging for machines to achieve class-aware sounding objects localization without category annotations, i.e., localizing the sounding object and recognizing its category. To address this problem, we propose a two-stage step-by-step learning framework to localize and recognize sounding objects in complex audiovisual scenarios using only the correspondence between audio and vision. First, we propose to determine the sounding area via coarse-grained audiovisual correspondence in the single source cases. Then visual features in the sounding area are leveraged as candidate object representations to establish a category-representation object dictionary for expressive visual character extraction. We generate class-aware object localization maps in cocktail-party scenarios and use audiovisual correspondence to suppress silent areas by referring to this dictionary. Finally, we employ category-level audiovisual consistency as the supervision to achieve fine-grained audio and sounding object distribution alignment. Experiments on both realistic and synthesized videos show that our model is superior in localizing and recognizing objects as well as filtering out silent ones. We also transfer the learned audiovisual network into the unsupervised object detection task, obtaining reasonable performance.
+
+TPAMI 2021: https://ieeexplore.ieee.org/abstract/document/9662191
+
+arxiv version: https://arxiv.org/abs/2112.11749
+
+
+## **Dataset**
+
+- MUSIC-Synthetic dataset: [Download](https://zenodo.org/record/4079386#.X4PFodozbb2)
+- VGGSound-Synthetic: [Download](#)
+- DailyLife: [Download](#)
+- Realistic MUSIC: [Download](#)
+
+## **Code**
+
+The [**Code**](https://github.com/GeWu-Lab/CSOL_TPAMI2021) is implemented on PyTorch with python3. 
+
+
+
+
+
 ### Requirements
 
 - PyTorch 1.1
@@ -12,7 +37,7 @@ Code for our TPAMI 2021 paper [**Class-aware Sounding Objects Localization via A
 
 ### Running Procedure
 
-For experiments on Music or AudioSet-instrument, the training and evaluation procedures are similar, respectively under the folder `music-exp` and `audioset-instrument`. Here, we take the experiments on Music dataset as an example.
+For experiments on Music, AudioSet-instrument and VGGSound, the training and evaluation procedures are similar, respectively under the folder `music-exp` and `audioset-instrument`. Here, we take the experiments on Music dataset as an example.
 
 #### Data Preparation
 
