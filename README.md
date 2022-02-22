@@ -36,16 +36,16 @@ For experiments on Music/VGGSound and AudioSet-instrument, the training and eval
 - Extract frames at 4 fps by running 
 
   ```
-  python3 data/cut_video.py
+  python3 code/CSOL/data/cut_video.py
   ```
 
 - Extract 1-second audio clips and turn into Log-Mel-Spectrogram by running
 
   ```
-  python3 data/cut_audio.py
+  python3 code/CSOL/data/cut_audio.py
   ```
 
-The sounding object bounding box annotations on solo and duet are stored in `music-exp/solotest.json` and `music-exp/duettest.json`, and the data and annotations of synthetic set are available at https://zenodo.org/record/4079386#.X4PFodozbb2 . And the Audioset-instrument balanced subset bounding box annotations are in `audioset-instrument/audioset_box.json`
+The sounding object bounding box annotations on solo and duet are stored in `code/CSOL/solotest.json` and `code/CSOL/duettest.json`, and the data and annotations of synthetic set are available at https://zenodo.org/record/4079386#.X4PFodozbb2 . And the Audioset-instrument balanced subset bounding box annotations are in `code/audioset-instrument/audioset_box.json`
 
 #### Training
 
@@ -67,7 +67,7 @@ optional arguments:
 ```
 
 ```
-python3 training_stage_one.py
+python3 code/CSOL/training_stage_one.py
 ```
 
 After training of stage one, we will get the cluster pseudo labels and object dictionary of different classes in the folder `./obj_features`, which is then used in the second stage training as category-aware object representation reference.
@@ -86,7 +86,7 @@ optional arguments:
 ```
 
 ```
-python3 training_stage_two.py
+python3 code/CSOL/training_stage_two.py
 ```
 
 #### Evaluation
@@ -96,8 +96,8 @@ python3 training_stage_two.py
 We first generate localization results and save then as a pkl file, then calculate metrics, IoU and AUC and also generate visualizations, by running
 
 ```
-python3 training_stage_one.py --mode test --use_pretrain 1 --ckpt_file your_ckpt_file_path
-python3 tools.py
+python3 code/CSOL/training_stage_one.py --mode test --use_pretrain 1 --ckpt_file your_ckpt_file_path
+python3 code/CSOL/tools.py
 ```
 
 ##### Stage two
@@ -105,7 +105,7 @@ python3 tools.py
 For evaluation of stage two, i.e., class-aware sounding object localization in multi-source scenes, we first match the cluster pseudo labels generated in stage one with gt labels to accordingly assign one object category to each center representation in the object dictionary by running
 
 ```
-python3 match_cluster.py
+python3 code/CSOL/match_cluster.py
 ```
 
 It is necessary to manually ensure there is one-to-one matching between object category and each center representation.
@@ -113,7 +113,7 @@ It is necessary to manually ensure there is one-to-one matching between object c
 Then we generate the localization results and calculate metrics, CIoU AUC and NSA, by running
 
 ```
-python3 test_stage_two.py
-python3 eval.py
+python3 code/CSOL/test_stage_two.py
+python3 code/CSOL/eval.py
 ```
 
