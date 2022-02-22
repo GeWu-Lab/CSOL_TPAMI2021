@@ -14,11 +14,7 @@ arxiv version: https://arxiv.org/abs/2112.11749
 
 ## **Code**
 
-The [**Code**](https://github.com/GeWu-Lab/CSOL_TPAMI2021) is implemented on PyTorch with python3. 
-
-
-
-
+The code is implemented on PyTorch with python3. 
 
 ### Requirements
 
@@ -31,7 +27,7 @@ The [**Code**](https://github.com/GeWu-Lab/CSOL_TPAMI2021) is implemented on PyT
 
 ### Running Procedure
 
-For experiments on Music, AudioSet-instrument and VGGSound, the training and evaluation procedures are similar, respectively under the folder `music-exp` and `audioset-instrument`. Here, we take the experiments on Music dataset as an example.
+For experiments on Music/VGGSound and AudioSet-instrument, the training and evaluation procedures are similar, respectively under the folder `code/CSOL/data/data_indicator` and `code/audioset-instrument`. Here, we take the experiments on Music dataset as an example.
 
 #### Data Preparation
 
