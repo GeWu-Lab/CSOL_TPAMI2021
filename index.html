@@ -57,7 +57,7 @@
 
 <div class="container">
   <h2>Music Scenes</h2>
-  <p>We conduct expreiments on seceral dataset with music scene and visualize some localization on realistic and synthetic cocktail-party videos. The class-aware localization maps are expected to localize objects of different classes and filter out silent ones. The green box indicates target sounding object area, and the red box means this class of object is silent, and its activation value should be low.
+  <p>Music scenes with multiple-sources are common in our daily life. We first conduct expreiments on seceral realistic and synthetic dataset and visualize some localization oo cocktail-party videos. Our model can localize objects of different classes and filter out silent ones. The green box indicates target sounding object area, and the red box means this class of object is silent, and its activation value should be low.
   
     <figure>
       <img align="center" width="80%"
@@ -76,7 +76,7 @@
 
 <div class="container">
   <h2>General Scenes</h2>
-  <p>Besides the aforementioned music scenes, we expand our method to more general daily cases covering various sounding objects, e.g., humans, animals, vehicles. We also conduct expreiments on seceral dataset covering more general scenes and visualize some localization on realistic and synthetic videos. According to the results, our model is also superior to other method.
+  <p>Besides the music scenes, we expand our method to more general daily cases covering various sounding objects, e.g., humans, animals, vehicles. We also conduct expreiments on seceral real and synthetic dataset covering more general scenes and visualize some localization results.
     <figure>
       <img align="center" width="80%"
       src="fig/gene.png"
@@ -89,8 +89,8 @@
 <br>
 <br>
 <div class="container">
-  <h2>Extention: Unsupervised Ovject Detection</h2>
-  <p>In this work, we utilize the correspondence between audio and vision to perform class-aware sounding objects localization. In the single sound source scenario, the learned localization heatmap and the cluster label have the potential to migrate to other vision tasks, since the localization heatmap can reflect the visual information of object and the cluster label offers category information. In this section, we aim to explore the application of our audiovisual network in object detection task. We conduct single source localization task on the MUSIC-solo dataset. The obtained localization heatmap is then used to generate bounding box. The generated bounding box and the cluster label are utilized to train a Faster-RCNN model. Based on the experiment results, our method is able to distinguish different objects and generate bounding boxes effectively.
+  <h2>Extention: Unsupervised Object Detection</h2>
+  <p>In this work, we utilize the correspondence between audio and vision to perform class-aware sounding objects localization. And the model can learn vision knowledge of different objects during the training of sounding object localization. Then, we propose to transfer such knowledge into typical vision tasks, like object detection. Concretely, the obtained localization heatmap is then used to generate bounding box. The generated bounding box and the cluster label are utilized to train a Faster-RCNN model. Based on the experiment results, our method is able to distinguish different objects and generate bounding boxes effectively.
     <figure>
       <img align="center" width="80%"
       src="fig/detection.png"
@@ -106,10 +106,10 @@
 <div class="container">
   <h2>Dataset</h2>
   <p>
-    <strong><a href="#" target="_blank"> MUSIC-Synthetic </a>& <a href="#" target="_blank"> VGG-Synthetic</a>: </strong>To help the learning and evaluation of multiple-sources sound localization in the cocktail-party scenario, we build multi-source videos by artificially synthesizing solo videos from the MUSIC and VGGSound dataset, repectively. Go in detail, we first randomly select four 1-second solo audiovisual pairs of different categories, then get the multi-source video frames by means of mixing random two audio clips with jittering, and multi-source video frame is synthesized through concatenating four frames of these clips. That means there are two sounding instruments and two silent instruments in the synthesized audiovisual pair. Thus, this synthesized dataset is quite appropriate for the evaluation of class-aware sounding object localization. 
+    <strong><a href="https://zenodo.org/record/4079386#.X4PFodozbb2" target="_blank"> MUSIC-Synthetic </a>& <a href="#" target="_blank"> VGG-Synthetic</a>: </strong>To help the learning and evaluation of multiple-sources sound localization in the cocktail-party scenario, we build multi-source videos by artificially synthesizing solo videos from the MUSIC and VGGSound dataset, repectively. Go in detail, we first randomly select four 1-second solo audiovisual pairs of different categories, then get the multi-source video frames by means of mixing random two audio clips with jittering, and multi-source video frame is synthesized through concatenating four frames of these clips. That means there are two sounding instruments and two silent instruments in the synthesized audiovisual pair. Thus, this synthesized dataset is quite appropriate for the evaluation of class-aware sounding object localization. 
   </p>
   <p>
-    <strong><a href="#" target="_blank"> Realistic MUSIC </a>& <a href="#" target="_blank"> DailyLife</a>: </strong>To further evaluate our model in real-world scenes, we collect real multi-source instrument videos and real multi-source daily life scenes on YouTube. Each instrument video includes 3 to 4 instruments and each daily life scene includes 2 events Because of the high noise of the real data, we perform manual labeling for bounding box annotation. We select one second from each video and manually label the corresponding frame, marking out the bounding boxes and whether each object is sounding or not.
+    <strong><a href="https://zenodo.org/record/6235313#.YhWmRZNBw-Q" target="_blank"> Realistic MUSIC </a>& <a href="https://zenodo.org/record/6235340#.YhWmtpNBw-Q" target="_blank"> DailyLife</a>: </strong>To further evaluate our model in real-world scenes, we collect real multi-source instrument videos and real multi-source daily life scenes on YouTube. Each instrument video includes 3 to 4 instruments and each daily life scene includes 2 events Because of the high noise of the real data, we perform manual labeling for bounding box annotation. We select the first second from each video and manually label the corresponding frame, marking out the bounding boxes and whether each object is sounding or not.
   </p>
   <p>For more details about the dataset, please refer to our paper.</p>
 
