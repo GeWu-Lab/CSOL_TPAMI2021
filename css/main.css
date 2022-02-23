@@ -1,4 +1,19 @@
+pre {
+    text-align: left;
+    line-height: 130%;
+    margin: 10px;
+    padding: 20px;
+    background-color: #2d2d2d;
+    color: white;
+    border-radius: 5px;
+}
 
+pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0px;
+}
 .content {
     display: inline-block;
     margin-top: 10%;
