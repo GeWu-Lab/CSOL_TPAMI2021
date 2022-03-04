@@ -1,5 +1,5 @@
 # **Class-aware Sounding Objects Localization**
-Praject page: https://gewu-lab.github.io/CSOL_TPAMI2021/
+Project page: https://gewu-lab.github.io/CSOL_TPAMI2021/
 
 TPAMI 2021: https://ieeexplore.ieee.org/abstract/document/9662191
 
