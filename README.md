@@ -1,4 +1,5 @@
 # **Class-aware Sounding Objects Localization**
+Praject page: https://gewu-lab.github.io/CSOL_TPAMI2021/
 
 TPAMI 2021: https://ieeexplore.ieee.org/abstract/document/9662191
 
@@ -8,9 +9,9 @@ arxiv version: https://arxiv.org/abs/2112.11749
 ## **Dataset**
 
 - MUSIC-Synthetic dataset: [Download](https://zenodo.org/record/4079386#.X4PFodozbb2)
-- VGGSound-Synthetic: [Download](#)
-- DailyLife: [Download](#)
-- Realistic MUSIC: [Download](#)
+- VGGSound-Synthetic: [Download](https://zenodo.org/record/6237158#.YhXUFZNBzao)
+- DailyLife: [Download](https://zenodo.org/record/6235340#.YhWmtpNBw-Q)
+- Realistic MUSIC: [Download](https://zenodo.org/record/6235313#.YhWmRZNBw-Q)
 
 ## **Code**
 
